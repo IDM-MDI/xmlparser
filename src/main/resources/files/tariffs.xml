@@ -10,7 +10,6 @@
     <tar:callPrices>homeNetwork</tar:callPrices>
     <tar:smsPrice>0</tar:smsPrice>
     <tar:parameters>favoriteNumber</tar:parameters>
-    <tar:payForMonth>20</tar:payForMonth>
     <tar:speed>100.0</tar:speed>
   </tar:unlimitedInternet>
 

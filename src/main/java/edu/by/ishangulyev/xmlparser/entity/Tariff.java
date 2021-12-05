@@ -3,6 +3,8 @@ package edu.by.ishangulyev.xmlparser.entity;
 import edu.by.ishangulyev.xmlparser.entity.enums.CallPrice;
 import edu.by.ishangulyev.xmlparser.entity.enums.Parameter;
 
+import java.util.Objects;
+
 public abstract class Tariff
 {
     private String id;
@@ -11,6 +13,16 @@ public abstract class Tariff
     private int payroll;
     private CallPrice callPrice;
     private Parameter parameter;
+
+    public Tariff(String id, String name, String operatorName, int payroll, CallPrice callPrice, Parameter parameter)
+    {
+        this.id = id;
+        this.name = name;
+        this.operatorName = operatorName;
+        this.payroll = payroll;
+        this.callPrice = callPrice;
+        this.parameter = parameter;
+    }
 
     public String getName()
     {
@@ -61,4 +73,38 @@ public abstract class Tariff
     {
         this.parameter = parameter;
     }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Tariff tariff = (Tariff) o;
+        return payroll == tariff.payroll
+                && name.equals(tariff.name)
+                && operatorName.equals(tariff.operatorName)
+                && callPrice == tariff.callPrice
+                && parameter == tariff.parameter;
+    }
+
+    @Override
+    public String toString()
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        return stringBuilder.append("Tariff{")
+                .append("id = ").append(id)
+                .append(", name = ").append(name)
+                .append(", operatorName = ").append(operatorName)
+                .append(", payroll = ").append(payroll)
+                .append(", callPrice = ").append(callPrice)
+                .append(", parameter = ").append(parameter)
+                .toString();
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(name, operatorName, payroll, callPrice, parameter);
+    }
+
 }
