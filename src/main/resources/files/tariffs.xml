@@ -3,7 +3,7 @@
              xsi:schemaLocation="http://www.example.com/tariff  tariffs.xsd" xmlns:tar="www.example.com/tariff">
 
 
-  <tar:unlimitedInternet id="id1">
+<tar:unlimitedInternet id="id1">
     <tar:name>Unlimited1</tar:name>
     <tar:operatorName>MTC</tar:operatorName>
     <tar:payroll>0</tar:payroll>

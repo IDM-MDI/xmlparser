@@ -11,51 +11,59 @@ import edu.by.ishangulyev.xmlparser.builder.impl.UnlimitedInternetBuilderImpl;
 import edu.by.ishangulyev.xmlparser.entity.Tariff;
 import edu.by.ishangulyev.xmlparser.entity.enums.CallPrice;
 import edu.by.ishangulyev.xmlparser.entity.enums.Parameter;
+import edu.by.ishangulyev.xmlparser.exception.TariffException;
+import edu.by.ishangulyev.xmlparser.parser.TariffParserBuilder;
+import edu.by.ishangulyev.xmlparser.parser.impl.TariffDomBuilder;
 
 public class Main
 {
-    public static void main(String[] args)
+    private static final String path = "src/main/resources/files/tariffs.xml";
+    public static void main(String[] args) throws TariffException
     {
-        UnlimitedInternetBuilder builder = new UnlimitedInternetBuilderImpl();
-        Tariff tariff = builder.setID("1")
-                .setName("name")
-                .setOperatorName("operatorName")
-                .setPayRoll(30)
-                .setCallPrice(CallPrice.HOMENETWORK)
-                .setParameter(Parameter.TARIFFICATION)
-                .setSpeed(132)
-                .build();
-        System.out.println(tariff);
-        LimitedInternetBuilder builder1 = new LimitedInternetBuilderImpl();
-        Tariff tariff1 = builder1.setID("1")
-                .setName("name")
-                .setOperatorName("operatorName")
-                .setPayRoll(30)
-                .setCallPrice(CallPrice.HOMENETWORK)
-                .setParameter(Parameter.TARIFFICATION)
-                .setPayForMb(21)
-                .setSpeed(132)
-                .build();
-        System.out.println(tariff1);
-        FreeCallsBuilder builder2 = new FreeCallsBuilderImpl();
-        Tariff tariff2 = builder2.setID("1")
-                .setName("name")
-                .setOperatorName("operatorName")
-                .setPayRoll(30)
-                .setCallPrice(CallPrice.HOMENETWORK)
-                .setParameter(Parameter.TARIFFICATION)
-                .setMinute(21)
-                .build();
-        System.out.println(tariff2);
-        FreeMessengersBuilder builder3 = new FreeMessengersBuilderImpl();
-        Tariff tariff3 = builder3.setID("1")
-                .setName("name")
-                .setOperatorName("operatorName")
-                .setPayRoll(30)
-                .setCallPrice(CallPrice.HOMENETWORK)
-                .setParameter(Parameter.TARIFFICATION)
-                .setSpeed(132)
-                .build();
-        System.out.println(tariff3);
+//        UnlimitedInternetBuilder builder = new UnlimitedInternetBuilderImpl();
+//        Tariff tariff = builder.setID("1")
+//                .setName("name")
+//                .setOperatorName("operatorName")
+//                .setPayRoll(30)
+//                .setCallPrice(CallPrice.HOMENETWORK)
+//                .setParameter(Parameter.TARIFFICATION)
+//                .setSpeed(132)
+//                .build();
+//        System.out.println(tariff);
+//        LimitedInternetBuilder builder1 = new LimitedInternetBuilderImpl();
+//        Tariff tariff1 = builder1.setID("1")
+//                .setName("name")
+//                .setOperatorName("operatorName")
+//                .setPayRoll(30)
+//                .setCallPrice(CallPrice.HOMENETWORK)
+//                .setParameter(Parameter.TARIFFICATION)
+//                .setPayForMb(21)
+//                .setSpeed(132)
+//                .build();
+//        System.out.println(tariff1);
+//        FreeCallsBuilder builder2 = new FreeCallsBuilderImpl();
+//        Tariff tariff2 = builder2.setID("1")
+//                .setName("name")
+//                .setOperatorName("operatorName")
+//                .setPayRoll(30)
+//                .setCallPrice(CallPrice.HOMENETWORK)
+//                .setParameter(Parameter.TARIFFICATION)
+//                .setMinute(21)
+//                .build();
+//        System.out.println(tariff2);
+//        FreeMessengersBuilder builder3 = new FreeMessengersBuilderImpl();
+//        Tariff tariff3 = builder3.setID("1")
+//                .setName("name")
+//                .setOperatorName("operatorName")
+//                .setPayRoll(30)
+//                .setCallPrice(CallPrice.HOMENETWORK)
+//                .setParameter(Parameter.TARIFFICATION)
+//                .setSpeed(132)
+//                .build();
+//        System.out.println(tariff3);
+
+        TariffParserBuilder builder4 = new TariffDomBuilder();
+        builder4.setPath(path).parse().collect();
+
     }
 }

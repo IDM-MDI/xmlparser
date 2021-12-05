@@ -1,7 +1,6 @@
 package edu.by.ishangulyev.xmlparser.builder.impl;
 
 import edu.by.ishangulyev.xmlparser.builder.FreeMessengersBuilder;
-import edu.by.ishangulyev.xmlparser.entity.FreeCalls;
 import edu.by.ishangulyev.xmlparser.entity.FreeMessengers;
 import edu.by.ishangulyev.xmlparser.entity.Tariff;
 import edu.by.ishangulyev.xmlparser.entity.enums.CallPrice;

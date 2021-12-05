@@ -1,6 +1,5 @@
 package edu.by.ishangulyev.xmlparser.builder.impl;
 
-import edu.by.ishangulyev.xmlparser.builder.TariffBuilder;
 import edu.by.ishangulyev.xmlparser.builder.UnlimitedInternetBuilder;
 import edu.by.ishangulyev.xmlparser.entity.Tariff;
 import edu.by.ishangulyev.xmlparser.entity.UnlimitedInternet;
