@@ -6,6 +6,8 @@ import edu.by.ishangulyev.xmlparser.entity.Tariff;
 import edu.by.ishangulyev.xmlparser.entity.enums.CallPrice;
 import edu.by.ishangulyev.xmlparser.entity.enums.Parameter;
 
+import java.time.LocalDateTime;
+
 public class LimitedInternetBuilderImpl implements LimitedInternetBuilder
 {
     private String id;
@@ -16,6 +18,8 @@ public class LimitedInternetBuilderImpl implements LimitedInternetBuilder
     private CallPrice callPrice;
     private double speed;
     private double payForMB;
+    private LocalDateTime connectTime;
+
     @Override
     public LimitedInternetBuilder setID(String id)
     {
@@ -73,8 +77,15 @@ public class LimitedInternetBuilderImpl implements LimitedInternetBuilder
     }
 
     @Override
+    public LimitedInternetBuilder setLocalDate(LocalDateTime connectTime)
+    {
+        this.connectTime = connectTime;
+        return this;
+    }
+
+    @Override
     public Tariff build()
     {
-        return new LimitedInternet(id,name,operatorName,payroll,callPrice,parameter,speed,payForMB);
+        return new LimitedInternet(id,name,operatorName,connectTime,payroll,callPrice,parameter,speed,payForMB);
     }
 }

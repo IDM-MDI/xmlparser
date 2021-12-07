@@ -4,8 +4,13 @@ import edu.by.ishangulyev.xmlparser.entity.Tariff;
 import edu.by.ishangulyev.xmlparser.entity.enums.CallPrice;
 import edu.by.ishangulyev.xmlparser.entity.enums.Parameter;
 
+import java.time.LocalDateTime;
+
 public interface FreeCallsBuilder extends TariffBuilder
 {
+    @Override
+    FreeCallsBuilder setLocalDate(LocalDateTime connectTime);
+
     @Override
     FreeCallsBuilder setID(String id);
 

@@ -4,6 +4,8 @@ import edu.by.ishangulyev.xmlparser.entity.Tariff;
 import edu.by.ishangulyev.xmlparser.entity.enums.CallPrice;
 import edu.by.ishangulyev.xmlparser.entity.enums.Parameter;
 
+import java.time.LocalDateTime;
+
 public interface UnlimitedInternetBuilder extends TariffBuilder
 {
     @Override
@@ -25,6 +27,9 @@ public interface UnlimitedInternetBuilder extends TariffBuilder
     UnlimitedInternetBuilder setParameter(Parameter parameter);
 
     UnlimitedInternetBuilder setSpeed(double speed);
+
+    @Override
+    UnlimitedInternetBuilder setLocalDate(LocalDateTime connectTime);
 
     @Override
     Tariff build();

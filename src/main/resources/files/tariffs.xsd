@@ -5,10 +5,10 @@
             elementFormDefault="qualified">
 
     <xsd:element name="tariff" type="dns:Tariff" abstract="true"/>
-    <xsd:element name="unlimitedInternet" type="dns:UnlimitedInternet" substitutionGroup="dns:tariff"/>
-    <xsd:element name="limitedInternet" type="dns:LimitedInternet" substitutionGroup="dns:tariff"/>
-    <xsd:element name="freeMessengers" type="dns:FreeMessengers" substitutionGroup="dns:tariff"/>
-    <xsd:element name="freeCalls" type="dns:FreeCalls" substitutionGroup="dns:tariff"/>
+    <xsd:element name="unlimitedinternet" type="dns:UnlimitedInternet" substitutionGroup="dns:tariff"/>
+    <xsd:element name="limitedinternet" type="dns:LimitedInternet" substitutionGroup="dns:tariff"/>
+    <xsd:element name="freemessengers" type="dns:FreeMessengers" substitutionGroup="dns:tariff"/>
+    <xsd:element name="freecalls" type="dns:FreeCalls" substitutionGroup="dns:tariff"/>
 
     <xsd:element name="Tariffs">
         <xsd:complexType>
@@ -24,8 +24,9 @@
         <xsd:sequence>
             <xsd:element name="name" type="xsd:string"/>
             <xsd:element name="operatorName" type="xsd:string"/>
+            <xsd:element name="connectTime" type="xsd:dateTime"/>
             <xsd:element name="payroll" type="xsd:nonNegativeInteger"/>
-            <xsd:element name="callPrices" type="dns:CallPrices"/>
+            <xsd:element name="callPrice" type="dns:CallPrices"/>
             <xsd:element name="smsPrice" type="xsd:nonNegativeInteger"/>
             <xsd:element name="parameters" type="dns:Parameters"/>
         </xsd:sequence>
@@ -62,8 +63,8 @@
         <xsd:complexContent>
             <xsd:extension base="dns:Tariff">
                 <xsd:sequence>
-                    <xsd:element name="payForMB" type="dns:doubleRegEx"/>
                     <xsd:element name="speed" type="dns:doubleRegEx"/>
+                    <xsd:element name="payForMB" type="dns:doubleRegEx"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>

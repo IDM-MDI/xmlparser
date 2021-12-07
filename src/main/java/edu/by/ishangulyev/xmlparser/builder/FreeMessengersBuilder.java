@@ -4,6 +4,8 @@ import edu.by.ishangulyev.xmlparser.entity.Tariff;
 import edu.by.ishangulyev.xmlparser.entity.enums.CallPrice;
 import edu.by.ishangulyev.xmlparser.entity.enums.Parameter;
 
+import java.time.LocalDateTime;
+
 public interface FreeMessengersBuilder extends TariffBuilder
 {
     @Override
@@ -25,6 +27,9 @@ public interface FreeMessengersBuilder extends TariffBuilder
     FreeMessengersBuilder setParameter(Parameter parameter);
 
     FreeMessengersBuilder setSpeed(double speed);
+
+    @Override
+    FreeMessengersBuilder setLocalDate(LocalDateTime connectTime);
 
     @Override
     Tariff build();

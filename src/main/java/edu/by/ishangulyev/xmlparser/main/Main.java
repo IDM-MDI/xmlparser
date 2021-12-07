@@ -1,19 +1,14 @@
 package edu.by.ishangulyev.xmlparser.main;
 
-import edu.by.ishangulyev.xmlparser.builder.FreeCallsBuilder;
-import edu.by.ishangulyev.xmlparser.builder.FreeMessengersBuilder;
-import edu.by.ishangulyev.xmlparser.builder.LimitedInternetBuilder;
-import edu.by.ishangulyev.xmlparser.builder.UnlimitedInternetBuilder;
-import edu.by.ishangulyev.xmlparser.builder.impl.FreeCallsBuilderImpl;
-import edu.by.ishangulyev.xmlparser.builder.impl.FreeMessengersBuilderImpl;
-import edu.by.ishangulyev.xmlparser.builder.impl.LimitedInternetBuilderImpl;
-import edu.by.ishangulyev.xmlparser.builder.impl.UnlimitedInternetBuilderImpl;
 import edu.by.ishangulyev.xmlparser.entity.Tariff;
-import edu.by.ishangulyev.xmlparser.entity.enums.CallPrice;
-import edu.by.ishangulyev.xmlparser.entity.enums.Parameter;
+import edu.by.ishangulyev.xmlparser.entity.enums.TariffTag;
 import edu.by.ishangulyev.xmlparser.exception.TariffException;
 import edu.by.ishangulyev.xmlparser.parser.TariffParserBuilder;
 import edu.by.ishangulyev.xmlparser.parser.impl.TariffDomBuilder;
+import edu.by.ishangulyev.xmlparser.parser.impl.TariffSaxBuilder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main
 {
@@ -61,9 +56,13 @@ public class Main
 //                .setSpeed(132)
 //                .build();
 //        System.out.println(tariff3);
-
-        TariffParserBuilder builder4 = new TariffDomBuilder();
-        builder4.setPath(path).parse().collect();
-
+//        List tariffList;
+//        TariffParserBuilder builder4 = new TariffDomBuilder();
+//        tariffList = builder4.setPath(path).parse().collect().getResult();
+//        System.out.println(tariffList);
+        List tariffs;
+        TariffParserBuilder builder = new TariffSaxBuilder();
+        tariffs = builder.setPath(path).parse().getResult();
+        System.out.println(tariffs);
     }
 }

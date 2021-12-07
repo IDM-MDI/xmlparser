@@ -3,6 +3,7 @@ package edu.by.ishangulyev.xmlparser.entity;
 import edu.by.ishangulyev.xmlparser.entity.enums.CallPrice;
 import edu.by.ishangulyev.xmlparser.entity.enums.Parameter;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 public abstract class Tariff
@@ -13,12 +14,15 @@ public abstract class Tariff
     private int payroll;
     private CallPrice callPrice;
     private Parameter parameter;
+    private LocalDateTime connectTime;
 
-    public Tariff(String id, String name, String operatorName, int payroll, CallPrice callPrice, Parameter parameter)
+    public Tariff(String id, String name, String operatorName,
+                  LocalDateTime connectTime, int payroll, CallPrice callPrice, Parameter parameter)
     {
         this.id = id;
         this.name = name;
         this.operatorName = operatorName;
+        this.connectTime = connectTime;
         this.payroll = payroll;
         this.callPrice = callPrice;
         this.parameter = parameter;
@@ -59,6 +63,16 @@ public abstract class Tariff
         return callPrice;
     }
 
+    public LocalDateTime getConnectTime()
+    {
+        return connectTime;
+    }
+
+    public void setconnectTime(LocalDateTime connectTime)
+    {
+        this.connectTime = connectTime;
+    }
+
     public void setCallPrice(CallPrice callPrice)
     {
         this.callPrice = callPrice;
@@ -95,6 +109,7 @@ public abstract class Tariff
                 .append("id = ").append(id)
                 .append(", name = ").append(name)
                 .append(", operatorName = ").append(operatorName)
+                .append(", connectTime = ").append(connectTime)
                 .append(", payroll = ").append(payroll)
                 .append(", callPrice = ").append(callPrice)
                 .append(", parameter = ").append(parameter)

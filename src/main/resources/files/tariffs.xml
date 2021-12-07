@@ -3,44 +3,48 @@
              xsi:schemaLocation="http://www.example.com/tariff  tariffs.xsd" xmlns:tar="www.example.com/tariff">
 
 
-<tar:unlimitedInternet id="id1">
+<tar:unlimitedinternet id="id1">
     <tar:name>Unlimited1</tar:name>
     <tar:operatorName>MTC</tar:operatorName>
+    <tar:connectTime>2003-12-03T06:00:00</tar:connectTime>
     <tar:payroll>0</tar:payroll>
-    <tar:callPrices>homeNetwork</tar:callPrices>
+    <tar:callPrice>homeNetwork</tar:callPrice>
     <tar:smsPrice>0</tar:smsPrice>
     <tar:parameters>favoriteNumber</tar:parameters>
     <tar:speed>100.0</tar:speed>
-  </tar:unlimitedInternet>
+  </tar:unlimitedinternet>
 
-  <tar:limitedInternet id="id2">
+  <tar:limitedinternet id="id2">
     <tar:name>limited</tar:name>
     <tar:operatorName>LIFE =)</tar:operatorName>
+    <tar:connectTime>2003-12-03T06:00:00</tar:connectTime>
     <tar:payroll>0</tar:payroll>
-    <tar:callPrices>homeNetwork</tar:callPrices>
+    <tar:callPrice>homeNetwork</tar:callPrice>
     <tar:smsPrice>0</tar:smsPrice>
     <tar:parameters>favoriteNumber</tar:parameters>
-    <tar:payForMB>10</tar:payForMB>
     <tar:speed>1.32</tar:speed>
-  </tar:limitedInternet>
+    <tar:payForMB>10</tar:payForMB>
+  </tar:limitedinternet>
 
-  <tar:freeMessengers id="id3">
+  <tar:freemessengers id="id3">
     <tar:name>mess</tar:name>
     <tar:operatorName>!MTC</tar:operatorName>
+    <tar:connectTime>2003-12-03T06:00:00</tar:connectTime>
     <tar:payroll>25</tar:payroll>
-    <tar:callPrices>homeNetwork</tar:callPrices>
+    <tar:callPrice>homeNetwork</tar:callPrice>
     <tar:smsPrice>0</tar:smsPrice>
     <tar:parameters>favoriteNumber</tar:parameters>
     <tar:speed>8.0</tar:speed>
-  </tar:freeMessengers>
+  </tar:freemessengers>
 
-  <tar:freeCalls id="id4">
+  <tar:freecalls id="id4">
     <tar:name>calls</tar:name>
     <tar:operatorName>!LIFE =(</tar:operatorName>
+    <tar:connectTime>2003-12-03T06:00:00</tar:connectTime>
     <tar:payroll>0</tar:payroll>
-    <tar:callPrices>homeNetwork</tar:callPrices>
+    <tar:callPrice>homeNetwork</tar:callPrice>
     <tar:smsPrice>0</tar:smsPrice>
     <tar:parameters>favoriteNumber</tar:parameters>
     <tar:minute>1000</tar:minute>
-  </tar:freeCalls>
+  </tar:freecalls>
 </tar:Tariffs>

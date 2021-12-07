@@ -6,11 +6,14 @@ import edu.by.ishangulyev.xmlparser.entity.UnlimitedInternet;
 import edu.by.ishangulyev.xmlparser.entity.enums.CallPrice;
 import edu.by.ishangulyev.xmlparser.entity.enums.Parameter;
 
+import java.time.LocalDateTime;
+
 public class UnlimitedInternetBuilderImpl implements UnlimitedInternetBuilder
 {
     private String id;
     private String name;
     private String operatorName;
+    private LocalDateTime connectTime;
     private int payroll;
     private Parameter parameter;
     private CallPrice callPrice;
@@ -66,8 +69,15 @@ public class UnlimitedInternetBuilderImpl implements UnlimitedInternetBuilder
     }
 
     @Override
+    public UnlimitedInternetBuilder setLocalDate(LocalDateTime connectTime)
+    {
+        this.connectTime = connectTime;
+        return this;
+    }
+
+    @Override
     public Tariff build()
     {
-        return new UnlimitedInternet(id,name,operatorName,payroll,callPrice,parameter,speed);
+        return new UnlimitedInternet(id,name,operatorName,connectTime,payroll,callPrice,parameter,speed);
     }
 }

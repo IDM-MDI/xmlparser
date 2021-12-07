@@ -6,6 +6,8 @@ import edu.by.ishangulyev.xmlparser.entity.Tariff;
 import edu.by.ishangulyev.xmlparser.entity.enums.CallPrice;
 import edu.by.ishangulyev.xmlparser.entity.enums.Parameter;
 
+import java.time.LocalDateTime;
+
 public class FreeMessengersBuilderImpl implements FreeMessengersBuilder
 {
     private String id;
@@ -15,6 +17,7 @@ public class FreeMessengersBuilderImpl implements FreeMessengersBuilder
     private Parameter parameter;
     private CallPrice callPrice;
     private double speed;
+    private LocalDateTime connectTime;
 
     @Override
     public FreeMessengersBuilder setID(String id)
@@ -52,6 +55,13 @@ public class FreeMessengersBuilderImpl implements FreeMessengersBuilder
     }
 
     @Override
+    public FreeMessengersBuilder setLocalDate(LocalDateTime connectTime)
+    {
+        this.connectTime = connectTime;
+        return this;
+    }
+
+    @Override
     public FreeMessengersBuilder setParameter(Parameter parameter)
     {
         this.parameter = parameter;
@@ -68,6 +78,6 @@ public class FreeMessengersBuilderImpl implements FreeMessengersBuilder
     @Override
     public Tariff build()
     {
-        return new FreeMessengers(id,name,operatorName,payroll,callPrice,parameter,speed);
+        return new FreeMessengers(id,name,operatorName,connectTime,payroll,callPrice,parameter,speed);
     }
 }

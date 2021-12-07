@@ -6,15 +6,26 @@ import edu.by.ishangulyev.xmlparser.entity.Tariff;
 import edu.by.ishangulyev.xmlparser.entity.enums.CallPrice;
 import edu.by.ishangulyev.xmlparser.entity.enums.Parameter;
 
+import java.time.LocalDateTime;
+
 public class FreeCallsBuilderImpl implements FreeCallsBuilder
 {
     private String id;
     private String name;
     private String operatorName;
+    private LocalDateTime connectTime;
     private int payroll;
     private Parameter parameter;
     private CallPrice callPrice;
     private int minute;
+
+    @Override
+    public FreeCallsBuilder setLocalDate(LocalDateTime connectTime)
+    {
+        this.connectTime = connectTime;
+        return this;
+    }
+
     @Override
     public FreeCallsBuilder setID(String id)
     {
@@ -67,6 +78,6 @@ public class FreeCallsBuilderImpl implements FreeCallsBuilder
     @Override
     public Tariff build()
     {
-        return new FreeCalls(id,name,operatorName,payroll,callPrice,parameter,minute);
+        return new FreeCalls(id,name,operatorName,connectTime,payroll,callPrice,parameter,minute);
     }
 }
