@@ -6,6 +6,7 @@ import edu.by.ishangulyev.xmlparser.exception.TariffException;
 import edu.by.ishangulyev.xmlparser.parser.TariffParserBuilder;
 import edu.by.ishangulyev.xmlparser.parser.impl.TariffDomBuilder;
 import edu.by.ishangulyev.xmlparser.parser.impl.TariffSaxBuilder;
+import edu.by.ishangulyev.xmlparser.parser.impl.TariffStaxBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,9 +61,11 @@ public class Main
 //        TariffParserBuilder builder4 = new TariffDomBuilder();
 //        tariffList = builder4.setPath(path).parse().collect().getResult();
 //        System.out.println(tariffList);
-        List tariffs;
-        TariffParserBuilder builder = new TariffSaxBuilder();
-        tariffs = builder.setPath(path).parse().getResult();
-        System.out.println(tariffs);
+        List tariffs = null;
+//        TariffParserBuilder builder = new TariffSaxBuilder();
+//        tariffs = builder.setPath(path).parse().getResult();
+        TariffParserBuilder builder = new TariffStaxBuilder();
+        builder.setPath(path).parse().collect();
+        System.out.println();
     }
 }

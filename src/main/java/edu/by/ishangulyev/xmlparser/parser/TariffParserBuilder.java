@@ -8,6 +8,6 @@ public interface TariffParserBuilder
 {
     TariffParserBuilder setPath(String path);
     TariffParserBuilder parse() throws TariffException;
-    TariffParserBuilder collect();
+    TariffParserBuilder collect() throws TariffException;
     List getResult();
 }
